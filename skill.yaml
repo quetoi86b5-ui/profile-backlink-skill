@@ -1,0 +1,25 @@
+name: profile-backlink
+title: Business Profile Registration
+description: Register a business across directories and profile sites in time-boxed passes, with one locked identity, Google-first sign-in, and a parked list for blocked sites.
+category: Business
+include_in_prompt: false
+skill_improvement:
+  managed: true
+  status: active
+  evidence_handles:
+  - message:assistant-msg-015098c7-05f2-4ace-9d28-b63514ef1f4c
+  - message:3499da8b-7ba2-5592-9129-93a2e7094043
+  - message:4e0a039e-2a2c-517e-9c69-1ab02e19406c
+  - message:7cf4d879-1abc-52ae-9d8f-67de4f211e14
+  - message:6ac09791-653b-42e7-8e88-8390ac7bab72
+  - message:assistant-msg-c24bb7fd-2354-4e2a-8d0e-9444c2a8f8e1
+  - message:1331e50e-e4a5-4b71-81e3-675672a767db
+  measurement:
+    proxy_metric_id: objective_success_rate
+    success_criterion: In the 30 days after install, a bulk registration run involving password-card sites makes no claim that a saved password was applied before the session actually moves past its card, and states the vault-transplant limit when relevant; if no such run occurs the result is inconclusive, not a success.
+    window_days: 30
+  needs_review: false
+  rationale: 'On 2026-11-20 the agent told the owner it had applied the saved old company password to four waiting signup sessions (assistant-msg-015098c7-05f2-4ace-9d28-b63514ef1f4c), then minutes later corrected itself: the vault cannot transplant a saved password onto a brand-new site signup form and the owner must type it once per new site (3499da8b-7ba2-5592-9129-93a2e7094043, 4e0a039e-2a2c-517e-9c69-1ab02e19406c, 7cf4d879-1abc-52ae-9d8f-67de4f211e14), after the owner asked whether Muse could enter it for him (6ac09791-653b-42e7-8e88-8390ac7bab72) and was told no, Muse never sees the value (assistant-msg-c24bb7fd-2354-4e2a-8d0e-9444c2a8f8e1). The current SKILL.md read at ~/workspace/custom-skills/profile-backlink/SKILL.md states the 4-minute card cap and to park password-only sites, but contains no vault-transplant limit and no rule against claiming a password was applied before the session passes its card. Adding that section addresses the exact false claim without changing the existing Google-first, park-and-batch method. Other hypotheses were rejected: the handoff-suppression rollups and goals_bookkeeping recurring failures are system-loop prompt territory with no managed document to change, the browser-task-owner-changed cluster is a runtime failure with no linked skill instruction, local_animated_short_film had no video delivery in the window so its passed review date is inconclusive rather than a failure, and only 2 learned skills are active so no consolidation is due.'
+  review_after: 2026-12-21T08:19:24.719831+00:00
+  reviewed_at: 2026-11-21T08:19:24.719831+00:00
+  run_id: sirun_d9a4f12795ec4325a7fcf9b6cf8415a4
